@@ -19,29 +19,29 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './client/index.html',      
+        template: './client/src/index.html',      
       }),
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
         name: 'Text Editor',
-        short_name: 'MyTextEditor',
-        description: 'My Text Editor Progressive Web App',
+        short_name: 'TextEditor',
+        description: 'An awesome text editor built as a PWA',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         start_url: '/',
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('client/src/images/logo.png'),
+            src: path.resolve(__dirname, 'client', 'src', 'images', 'logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], 
-            destination: path.join('images', 'logo'),
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),
       new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'service-worker.js', 
+        swSrc: path.resolve(__dirname, 'client', 'src-sw.js'),
+        swDest: 'service-worker.js',
       }),      
     ],
     module: {
