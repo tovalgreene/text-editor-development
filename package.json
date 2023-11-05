@@ -2,17 +2,17 @@
   "name": "JATE",
   "version": "1.0.0",
   "description": "Just Another Text Editor",
-  "main": "server.js", 
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js", 
-    "client-install": "cd client && npm install",
-    "client-build": "cd client && npm run build", 
-    "postinstall": "npm run client-install && npm run client-build",
-    "heroku-postbuild": "npm run client-build"
+    "start": "node server.js",
+    "install:client": "cd client && npm install",
+    "build:client": "cd client && npm run build",
+    "install:server": "cd server && npm install",
+    "heroku-postbuild": "npm run install:client && npm run build:client && npm run install:server"
   },
   "engines": {
-    "node": "14.x", 
-    "npm": "6.x" 
+    "node": "14.x",
+    "npm": "6.x"
   },
   "license": "MIT"
 }

@@ -1,7 +1,7 @@
 {
-    "name": "JATE",
+    "name": "JATE-server",
     "version": "1.0.0",
-    "description": "Just Another Text Editor",
+    "description": "Server for Just Another Text Editor",
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
