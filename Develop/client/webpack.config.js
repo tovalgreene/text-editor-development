@@ -5,7 +5,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
-    mode: 'development',
+    mode: isProduction ? 'production' : 'development',
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
@@ -13,6 +13,7 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
+      clean: true,
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -58,5 +59,7 @@ module.exports = () => {
         },
       ],
     },
+    optimization: isProduction ? { minimize: true } : {},
+    devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
   };
 };
