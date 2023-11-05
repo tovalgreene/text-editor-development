@@ -9,8 +9,8 @@ module.exports = () => {
   return {
     mode: isProduction ? 'production' : 'development',
     entry: {
-      main: './client/src/js/index.js',
-      install: './client/src/js/install.js',
+      main: 'src/js/index.js',
+      install: 'src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -19,7 +19,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './client/src/index.html',      
+        template: 'src/index.html',      
       }),
       new WebpackPwaManifest({
         fingerprints: false,
