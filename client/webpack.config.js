@@ -3,6 +3,8 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = () => {
   return {
     mode: isProduction ? 'production' : 'development',
@@ -12,7 +14,7 @@ module.exports = () => {
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'client', 'dist'), 
+      path: path.resolve(__dirname, 'client', 'dist'),
       publicPath: '/',
     },
     plugins: [
@@ -39,6 +41,7 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
+        swDest: 'service-worker.js', 
       }),      
     ],
     module: {
