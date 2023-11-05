@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
@@ -21,9 +21,7 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0",
     "webpack-pwa-manifest": "^4.3.0",
-    "workbox-webpack-plugin": "^6.2.4"
-  },
-  "dependencies": {
+    "workbox-webpack-plugin": "^6.2.4",
     "code-mirror-themes": "^1.0.0",
     "idb": "^6.1.2"
   },
