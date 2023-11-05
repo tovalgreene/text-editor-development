@@ -7,17 +7,17 @@ module.exports = () => {
   return {
     mode: isProduction ? 'production' : 'development',
     entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js'
+      main: './client/src/js/index.js',
+      install: './client/src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
-      clean: true,
+      path: path.resolve(__dirname, 'client', 'dist'), 
+      publicPath: '/',
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
+        template: './client/index.html',      
       }),
       new WebpackPwaManifest({
         fingerprints: false,
@@ -31,15 +31,15 @@ module.exports = () => {
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('client/src/assets/icon.png'),
             sizes: [96, 128, 192, 256, 384, 512], 
             destination: path.join('assets', 'icons'),
           },
         ],
       }),
       new InjectManifest({
-        swSrc: './src-sw.js', 
-      }),
+        swSrc: './src-sw.js',
+      }),      
     ],
     module: {
       rules: [
