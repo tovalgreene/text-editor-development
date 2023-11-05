@@ -1,13 +1,19 @@
 {
     "name": "JATE",
     "version": "1.0.0",
-    "description": "",
+    "description": "Just Another Text Editor",
     "main": "server.js",
     "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js --ignore client",
         "server": "nodemon server.js --ignore client"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "text-editor",
+        "node",
+        "express"
+    ],
+    "author": "Your Name",
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.1"

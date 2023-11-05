@@ -1,10 +1,10 @@
 {
-  "name": "text-editor-development",
+  "name": "JATE",
   "version": "1.0.0",
-  "description": "",
+  "description": "Just Another Text Editor",
   "main": "server.js", 
   "scripts": {
-    "start": "node server/server.js", 
+    "start": "node server.js", 
     "client-install": "cd client && npm install",
     "client-build": "cd client && npm run build", 
     "postinstall": "npm run client-install && npm run client-build",
@@ -14,11 +14,5 @@
     "node": "14.x", 
     "npm": "6.x" 
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-   
-  },
-  "devDependencies": {
-  }
+  "license": "MIT"
 }
